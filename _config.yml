@@ -1,3 +1,83 @@
-theme: minima
-title: Portfolio de Michel Romaric TUEKAM WABO
-description: Expert en gestion documentaire
+# Configuration Jekyll pour un portfolio professionnel avec blog
+
+# Métadonnées générales
+title: "Michel Romaric TUEKAM WABO"
+description: "Expert en gouvernance documentaire et gestion de l'information avec 10 ans d'expérience."
+author: "Michel Romaric TUEKAM WABO"
+email: "kowelcoorp@gmail.com"
+url: "https://wamiro.github.io/wamiro"
+baseurl: "" # Laissez vide pour GitHub Pages
+
+# Thème
+theme: minima # Remplacez "minima" par un autre thème si souhaité
+
+# Navigation (ajoutez des liens pour le portfolio et le blog)
+nav_links:
+  - title: "Accueil"
+    url: "/"
+  - title: "À propos"
+    url: "/about"
+  - title: "Portfolio"
+    url: "/portfolio"
+  - title: "Blog"
+    url: "/blog"
+  - title: "Contact"
+    url: "/contact"
+
+# SEO et Réseaux sociaux
+social_links:
+  twitter: "https://twitter.com/votre_nom_utilisateur"
+  linkedin: "https://linkedin.com/in/votre-nom-utilisateur"
+  github: "https://github.com/wamiro"
+  facebook: "https://facebook.com/votre-nom-utilisateur"
+
+# Plugins pour fonctionnalités avancées
+plugins:
+  - jekyll-feed       # Génération automatique d'un flux RSS
+  - jekyll-sitemap    # Génération d'un sitemap.xml pour le SEO
+  - jekyll-seo-tag    # Métadonnées pour optimiser le SEO
+  - jekyll-paginate   # Pagination pour le blog
+
+# Pagination pour les articles du blog
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Markdown et liens
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# Personnalisation du thème
+minima:
+  social_links: # Apparence des réseaux sociaux dans le footer
+    - github
+    - linkedin
+    - twitter
+  date_format: "%d %B %Y" # Format des dates : 22 Novembre 2024
+
+# Répertoires et fichiers
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Michel Romaric TUEKAM WABO"
+
+# Exclusions (fichiers à ignorer)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - README.md
+
+# Langue
+lang: "fr-FR"
